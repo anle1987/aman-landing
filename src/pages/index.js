@@ -89,6 +89,9 @@ const AboutTitle = styled.div`
   font-family: "Playfair Display", serif;
   margin-bottom: 32px;
   line-height: 1.4;
+  @media only screen and (max-width: 768px) {
+    font-size: 24px;
+  }
 `
 
 const SpanGreen = styled.span`
@@ -185,6 +188,9 @@ const ContactTitle = styled.div`
   margin-bottom: 24px;
   text-align: center;
   line-height: 1.4;
+  @media only screen and (max-width: 768px) {
+    font-size: 32px;
+  }
 `
 
 const Feature = styled.section`
@@ -205,12 +211,19 @@ const FeatureDescription = styled.div`
 const FeatureGrid = styled.div`
   width: 33.33%;
   padding: 0 32px;
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    padding: 0;
+  }
 `
 
 const FeatureItem = styled.div``
 
 const FeatureImage = styled.div`
   padding: 16px;
+  @media only screen and (max-width: 768px) {
+    padding: 32px 80px;
+  }
 `
 
 const FeatureList = styled.div`
@@ -218,6 +231,9 @@ const FeatureList = styled.div`
   flex-wrap: wrap;
   margin-left: -32px;
   margin-right: -32px;
+  @media only screen and (max-width: 768px) {
+    margin: 0;
+  }
 `
 
 const FeatureTitle = styled.div`
@@ -226,6 +242,9 @@ const FeatureTitle = styled.div`
   font-family: "Playfair Display", serif;
   margin-bottom: 32px;
   text-align: center;
+  @media only screen and (max-width: 768px) {
+    font-size: 32px;
+  }
 `
 
 const Footer = styled.section``
@@ -261,6 +280,9 @@ const Hero = styled.section`
     --swiper-theme-color: #155a51;
     height: 0;
     z-index: 3;
+    @media only screen and (max-width: 768px) {
+      text-align: center;
+    }
     .swiper-pagination-bullet {
       &:first-child {
         margin-left: 0;
@@ -280,6 +302,10 @@ const SlideButton = styled.button`
   background: #155a51;
   display: inline-block;
   border: none;
+  @media only screen and (max-width: 768px) {
+    padding: 8px 24px;
+    font-size: 14px;
+  }
 `
 
 const SlideContainer = styled.div`
@@ -287,6 +313,10 @@ const SlideContainer = styled.div`
   width: 100%;
   padding: 144px 16px 176px;
   margin: 0 auto;
+  @media only screen and (max-width: 768px) {
+    text-align: center;
+    padding: 100px 16px 100px;
+  }
 `
 const SlideText = styled.div`
   font-size: 48px;
@@ -300,6 +330,12 @@ const SlideText = styled.div`
   opacity: 0.2;
   transform: translateX(-300px);
   transition: all 0.7s ease;
+  @media only screen and (max-width: 768px) {
+    padding-right: 0;
+    font-size: 24px;
+    max-width: 400px;
+    margin: 0 auto 32px;
+  }
 `
 
 const SlideItem = styled.div`
@@ -307,6 +343,9 @@ const SlideItem = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   overflow: hidden;
+  @media only screen and (max-width: 768px) {
+    background-size: cover;
+  }
   &.swiper-slide-active {
     ${SlideText} {
       opacity: 1;
@@ -327,6 +366,9 @@ const SlideItem = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
+    @media only screen and (max-width: 768px) {
+      display: none;
+    }
   }
   &.slide-1 {
     background-image: url(${bgSlide1});

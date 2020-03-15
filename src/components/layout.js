@@ -36,6 +36,10 @@ const HeaderButton = styled.button`
   background: #155a51;
   border: none;
   margin-left: auto;
+  @media only screen and (max-width: 768px) {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
 `
 
 const HeaderContainer = styled.div`
@@ -46,12 +50,18 @@ const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
   height: 100px;
+  @media only screen and (max-width: 768px) {
+    height: 64px;
+  }
 `
 
 const HeaderLogo = styled(Link)`
   margin-right: 60px;
   img {
     margin-bottom: 0;
+  }
+  @media only screen and (max-width: 768px) {
+    margin-right: 24px;
   }
 `
 
@@ -61,12 +71,19 @@ const HeaderLink = styled(Link)`
   font-weight: bold;
   font-size: 16px;
   text-decoration: none;
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 `
 
 const MainWrapper = styled.div`
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+`
+
+const MainContent = styled.main`
+  flex: 1;
 `
 
 const Footer = styled.footer`
@@ -76,10 +93,18 @@ const Footer = styled.footer`
 
 const FooterAddressList = styled.div`
   display: flex;
+  @media only screen and (max-width: 768px) {
+    flex-wrap: wrap;
+  }
 `
 
 const FooterAddressItem = styled.div`
   margin-right: 144px;
+  @media only screen and (max-width: 768px) {
+    margin-right: 0;
+    width: 100%;
+    margin-bottom: 20px;
+  }
 `
 
 const FooterAddressName = styled.div`
@@ -100,10 +125,16 @@ const FooterContainer = styled.div`
   margin: 0 auto;
   display: flex;
   align-items: flex-end;
+  @media only screen and (max-width: 768px) {
+    flex-wrap: wrap;
+  }
 `
 
 const FooterInformation = styled.div`
   flex: 1;
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
 `
 
 const FooterLogo = styled.div`
@@ -114,6 +145,10 @@ const FooterLogo = styled.div`
 
 const FooterSocial = styled.div`
   display: flex;
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    margin-top: 32px;
+  }
 `
 
 const FooterSocialLink = styled.a`
@@ -124,6 +159,9 @@ const FooterSocialLink = styled.a`
   background-repeat: no-repeat;
   background-position: center;
   transition: all 0.3s ease;
+  &:first-child {
+    margin-left: 0;
+  }
   &:hover {
     transform: scale(1.1);
   }
@@ -161,7 +199,7 @@ const Layout = ({ children }) => {
           <HeaderButton>Get in Touch</HeaderButton>
         </HeaderContainer>
       </Header>
-      <main>{children}</main>
+      <MainContent>{children}</MainContent>
       <Footer>
         <FooterContainer>
           <FooterInformation>

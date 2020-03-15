@@ -532,7 +532,7 @@ const IndexPage = () => {
               </ContactFormColumn>
             </ContactFormRow>
             <ContactFormAction>
-              <ContactFormButton>Submit</ContactFormButton>
+              <ContactFormButton type="submit">Submit</ContactFormButton>
             </ContactFormAction>
           </ContactForm>
         </ContactContainer>

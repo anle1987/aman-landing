@@ -512,7 +512,15 @@ const IndexPage = () => {
             us. We will keep you updated once you have submitted your contact
             information below.
           </ContactSubtitle>
-          <ContactForm name="contact" method="POST" data-netlify="true">
+          <ContactForm
+            name="contact"
+            method="POST"
+            netlify
+            data-netlify-honeypot="bot-field"
+          >
+            <input type="hidden" name="bot-field" />
+            <input type="hidden" name="form-name" value="contact" />
+
             <ContactFormRow>
               <ContactFormLabel>Full Name</ContactFormLabel>
               <ContactFormInput type="text" name="name" />

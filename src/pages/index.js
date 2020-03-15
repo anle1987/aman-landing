@@ -125,7 +125,7 @@ const ContactForm = styled.form`
   margin: 0 auto;
 `
 
-const ContactFormAction = styled.form`
+const ContactFormAction = styled.div`
   text-align: center;
   padding-top: 20px;
 `
@@ -515,7 +515,7 @@ const IndexPage = () => {
           <ContactForm
             name="contact"
             method="POST"
-            netlify
+            data-netlify="true"
             data-netlify-honeypot="bot-field"
           >
             <input type="hidden" name="bot-field" />

@@ -512,23 +512,23 @@ const IndexPage = () => {
             us. We will keep you updated once you have submitted your contact
             information below.
           </ContactSubtitle>
-          <ContactForm>
+          <ContactForm name="contact" method="POST" data-netlify="true">
             <ContactFormRow>
               <ContactFormLabel>Full Name</ContactFormLabel>
-              <ContactFormInput type="text" />
+              <ContactFormInput type="text" name="name" />
             </ContactFormRow>
             <ContactFormRow>
               <ContactFormLabel>Company Name</ContactFormLabel>
-              <ContactFormInput type="text" />
+              <ContactFormInput type="text" name="company" />
             </ContactFormRow>
             <ContactFormRow hasColumn>
               <ContactFormColumn>
                 <ContactFormLabel>E-Mail</ContactFormLabel>
-                <ContactFormInput type="text" />
+                <ContactFormInput type="email" name="email" />
               </ContactFormColumn>
               <ContactFormColumn>
                 <ContactFormLabel>Phone Number</ContactFormLabel>
-                <ContactFormInput type="text" />
+                <ContactFormInput type="text" name="phone" />
               </ContactFormColumn>
             </ContactFormRow>
             <ContactFormAction>

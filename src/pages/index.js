@@ -90,7 +90,7 @@ const AboutTitle = styled.div`
   margin-bottom: 32px;
   line-height: 1.4;
   @media only screen and (max-width: 768px) {
-    font-size: 24px;
+    font-size: 32px;
   }
 `
 

@@ -10,6 +10,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import iconEmployers from "../images/ic-foremployers.svg"
 import iconEmployees from "../images/ic-foremployees.svg"
 import iconInsurers from "../images/ic-forinsurers.svg"
+import iconLineYellow1 from "../images/ic-line-yellow-1.svg"
+import iconLineYellow2 from "../images/ic-line-yellow-2.svg"
 import bgCurveGreen from "../images/bg-curve-green.svg"
 import bgCurveOrange from "../images/bg-curve-orange.svg"
 import bgSlide1 from "../images/bg-slide-1.jpg"
@@ -18,6 +20,7 @@ import bgSlide3 from "../images/bg-slide-3.jpg"
 import imageSlide1 from "../images/image-slide-1.png"
 import imageSlide2 from "../images/image-slide-2.png"
 import imageSlide3 from "../images/image-slide-3.png"
+import scrollTo from "gatsby-plugin-smoothscroll"
 
 const About = styled.section`
   padding-top: 80px;
@@ -28,10 +31,55 @@ const AboutBox = styled.div`
   border-radius: 16px;
   padding: 32px;
   margin-bottom: 72px;
+  position: relative;
+  background-color: #ffffff;
+  z-index: 1;
+  @media only screen and (max-width: 768px) {
+    padding: 16px 32px;
+  }
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    @media only screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+  &:first-child {
+    &:before {
+      background-image: url(${iconLineYellow1});
+      width: 8%;
+      height: 150%;
+      bottom: 50%;
+      right: 99%;
+    }
+    &:after {
+      background-image: url(${iconLineYellow2});
+      width: 8%;
+      height: 150%;
+      top: 50%;
+      left: 100%;
+    }
+  }
+  &:last-child {
+    &:before {
+      background-image: url(${iconLineYellow2});
+      width: 8%;
+      height: 150%;
+      bottom: 50%;
+      right: 100%;
+      transform: rotate(180deg);
+    }
+  }
 `
 
 const AboutBoxWrap = styled.div`
   padding: 0 96px 0 64px;
+  @media only screen and (max-width: 768px) {
+    padding: 0;
+  }
 `
 
 const AboutContainer = styled.div`
@@ -50,6 +98,9 @@ const AboutHead = styled.div`
 
 const AboutIntro = styled.div`
   padding-left: 64px;
+  @media only screen and (max-width: 768px) {
+    padding-left: 0;
+  }
 `
 
 const AboutHeadline = styled.div`
@@ -57,6 +108,9 @@ const AboutHeadline = styled.div`
   font-weight: bold;
   text-transform: uppercase;
   padding-left: 120px;
+  @media only screen and (max-width: 768px) {
+    padding-left: 88px;
+  }
 `
 
 const AboutIcon = styled.i`
@@ -67,6 +121,10 @@ const AboutIcon = styled.i`
   background-position: center;
   position: absolute;
   bottom: 0;
+  @media only screen and (max-width: 768px) {
+    width: 72px;
+    height: 72px;
+  }
   &.employers {
     background-image: url(${iconEmployers});
   }
@@ -81,6 +139,7 @@ const AboutIcon = styled.i`
 const AboutParagraph = styled.div`
   font-size: 20px;
   margin-bottom: 72px;
+  line-height: 1.4;
 `
 
 const AboutTitle = styled.div`
@@ -260,7 +319,7 @@ const Hero = styled.section`
       height: 0;
       width: 100%;
       position: absolute;
-      bottom: 0;
+      bottom: -4px;
       left: 0;
       background-repeat: no-repeat;
       background-size: cover;
@@ -302,9 +361,12 @@ const SlideButton = styled.button`
   background: #155a51;
   display: inline-block;
   border: none;
+  cursor: pointer;
+  margin-bottom: 36px;
   @media only screen and (max-width: 768px) {
     padding: 8px 24px;
     font-size: 14px;
+    margin-bottom: 0;
   }
 `
 
@@ -313,6 +375,8 @@ const SlideContainer = styled.div`
   width: 100%;
   padding: 144px 16px 176px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
   @media only screen and (max-width: 768px) {
     text-align: center;
     padding: 100px 16px 100px;
@@ -437,7 +501,9 @@ const IndexPage = () => {
                 Coronavirus can weigh in on your finance. Worry not, Aman has it
                 covered.
               </SlideText>
-              <SlideButton>See How</SlideButton>
+              <SlideButton onClick={() => scrollTo("#featureSection")}>
+                See How
+              </SlideButton>
             </SlideContainer>
           </SlideItem>
           <SlideItem className="slide-2">
@@ -445,7 +511,9 @@ const IndexPage = () => {
               <SlideText>
                 Cost saving on insurance can be that simple with Aman.
               </SlideText>
-              <SlideButton>See How</SlideButton>
+              <SlideButton onClick={() => scrollTo("#featureSection")}>
+                See How
+              </SlideButton>
             </SlideContainer>
           </SlideItem>
           <SlideItem className="slide-3">
@@ -454,17 +522,19 @@ const IndexPage = () => {
                 Proactive quote feature on Aman helps to boost your sales to new
                 customers.
               </SlideText>
-              <SlideButton>See How</SlideButton>
+              <SlideButton onClick={() => scrollTo("#featureSection")}>
+                See How
+              </SlideButton>
             </SlideContainer>
           </SlideItem>
         </Swiper>
       </Hero>
-      <About>
+      <About id="aboutSection">
         <AboutContainer>
           <AboutTitle>What is Aman?</AboutTitle>
           <AboutIntro>
             <AboutParagraph>
-              <SpanGreen>Aman /aman</SpanGreen> was founded by a team of
+              <SpanGreen>Aman /aman/</SpanGreen> was founded by a team of
               technology enthusiast as a technology platform, enabling companies
               and employees to seamlessly manage various health benefit and
               lifestyle programs.
@@ -506,7 +576,7 @@ const IndexPage = () => {
           </AboutBoxWrap>
         </AboutContainer>
       </About>
-      <Feature>
+      <Feature id="featureSection">
         <FeatureContainer>
           <FeatureTitle>These are our forte.</FeatureTitle>
           <FeatureList>
@@ -546,7 +616,7 @@ const IndexPage = () => {
           </FeatureList>
         </FeatureContainer>
       </Feature>
-      <Contact>
+      <Contact id="contactSection">
         <ContactContainer>
           <ContactTitle>Let us keep you updated.</ContactTitle>
           <ContactSubtitle>

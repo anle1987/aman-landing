@@ -15,6 +15,7 @@ import iconFacebook from "../images/ic-facebook.svg"
 import iconInstagram from "../images/ic-instagram.svg"
 import iconLinkedin from "../images/ic-linkedin.svg"
 import iconTwitter from "../images/ic-twitter.svg"
+import scrollTo from "gatsby-plugin-smoothscroll"
 import "./layout.css"
 
 const Header = styled.header`
@@ -36,6 +37,7 @@ const HeaderButton = styled.button`
   background: #155a51;
   border: none;
   margin-left: auto;
+  cursor: pointer;
   @media only screen and (max-width: 768px) {
     font-size: 14px;
     padding: 8px 16px;
@@ -65,12 +67,15 @@ const HeaderLogo = styled(Link)`
   }
 `
 
-const HeaderLink = styled(Link)`
+const HeaderLink = styled.button`
   margin-right: 40px;
   color: #155a51;
   font-weight: bold;
   font-size: 16px;
   text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
   @media only screen and (max-width: 768px) {
     display: none;
   }
@@ -194,9 +199,15 @@ const Layout = ({ children }) => {
           <HeaderLogo>
             <img src={logoAman} alt="logo aman" />
           </HeaderLogo>
-          <HeaderLink>About Us</HeaderLink>
-          <HeaderLink>Features</HeaderLink>
-          <HeaderButton>Get in Touch</HeaderButton>
+          <HeaderLink onClick={() => scrollTo("#aboutSection")}>
+            About Us
+          </HeaderLink>
+          <HeaderLink onClick={() => scrollTo("#featureSection")}>
+            Features
+          </HeaderLink>
+          <HeaderButton onClick={() => scrollTo("#contactSection")}>
+            Get in Touch
+          </HeaderButton>
         </HeaderContainer>
       </Header>
       <MainContent>{children}</MainContent>

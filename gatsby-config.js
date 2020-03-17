@@ -15,6 +15,13 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // replace "UA-XXXXXXXXX-X" with your own Tracking ID
+        trackingId: "UA-160835285-1",
+      },
+    },
     `gatsby-plugin-smoothscroll`,
     {
       resolve: `gatsby-plugin-manifest`,
